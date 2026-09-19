@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import About from "@/components/About";
 
 export default function Home() {
   return (
@@ -40,6 +41,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <About />
     </main>
   );
 }
