@@ -1,7 +1,11 @@
+import Navbar from "@/components/Navbar";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <section className="flex min-h-screen items-center justify-center px-6">
+      <Navbar />
+
+      <section className="flex min-h-screen items-center justify-center px-6 pt-20">
         <div className="max-w-4xl text-center">
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
             Aspiring AI / Machine Learning Engineer
