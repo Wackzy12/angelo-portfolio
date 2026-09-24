@@ -26,7 +26,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="border-t border-gray-800 px-6 py-24"
+      className="scroll-mt-24 border-t border-gray-800 px-6 py-24"
     >
       <div className="mx-auto max-w-6xl">
         <SectionHeading

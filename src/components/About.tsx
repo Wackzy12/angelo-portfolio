@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="border-t border-gray-800 px-6 py-24"
+      className="scroll-mt-24 border-t border-gray-800 px-6 py-24"
     >
       <div className="mx-auto max-w-6xl">
         <SectionHeading

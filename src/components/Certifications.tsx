@@ -2,44 +2,40 @@ import SectionHeading from "@/components/SectionHeading";
 
 export default function Certifications() {
   const certifications = [
+      {
+      title: "AWS Academy Cloud Foundations",
+      issuer: "Amazon Web Services",
+      description:
+        "Introduction to cloud concepts, services, and best practices.",
+      date: "2025",
+    },
+    {
+      title: "Data Analytics Essentials",
+      issuer: "Cisco",
+      description:
+        "Introduction to data analytics concepts, tools, and techniques.",
+      date: "2025",
+    },
     {
       title: "AI Fundamentals: Language and Vision in AI",
       issuer: "IBM SkillsBuild",
       description:
-        "Foundational concepts in artificial intelligence, including AI applications, machine learning concepts, and responsible AI.",
+        "Basics of AI, including natural language processing and computer vision.",
       date: "2026",
-      link: "#",
     },
     {
         title: "AI For Business Professionals",
         issuer: "HP Life",
         description:
-          "Comprehensive introduction to machine learning with Python, covering supervised and unsupervised learning techniques.",
+          "AI fundamentals and their applications in business, decision-making, and productivity.",
         date: "2026",
-        link: "#",
-    },
-    {
-        title: "AWS Academy Cloud Foundations",
-        issuer: "Amazon Web Services",
-        description:
-          "Introduction to cloud concepts, services, and best practices.",
-        date: "2025",
-        link: "#",
-    },
-    {
-        title: "Data Analytics Essentials",
-        issuer: "Cisco",
-        description:
-          "Introduction to data analytics concepts, tools, and techniques.",
-        date: "2025",
-        link: "#",
     },
   ];
 
   return (
     <section
       id="certifications"
-      className="border-t border-gray-800 px-6 py-24"
+      className="scroll-mt-24 border-t border-gray-800 px-6 py-24"
     >
       <div className="mx-auto max-w-6xl">
         <SectionHeading
@@ -73,15 +69,6 @@ export default function Certifications() {
               <p className="mt-6 leading-7 text-gray-400">
                 {certification.description}
               </p>
-
-              <a
-                href={certification.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-block text-sm font-medium text-gray-300 transition hover:text-white"
-              >
-                View Certificate →
-              </a>
             </article>
           ))}
         </div>
