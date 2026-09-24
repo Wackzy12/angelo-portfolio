@@ -12,51 +12,68 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white">
       <Navbar />
 
-      <section className="flex min-h-screen items-center justify-center px-6 pt-20">
-        <div className="max-w-4xl text-center">
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
-            Aspiring AI / Machine Learning Engineer
-          </p>
+      <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-20">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/3 blur-3xl" />
+        </div>
 
-          <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
-            Hi, I'm Angelo.
-          </h1>
+        <div className="relative mx-auto w-full max-w-6xl">
+          <div className="max-w-4xl">
+            <div className="mb-6 inline-flex items-center rounded-full border border-gray-800 bg-gray-950 px-4 py-2 text-sm text-gray-400">
+              <span className="mr-2 h-2 w-2 rounded-full bg-green-400" />
+              Available for entry-level opportunities
+            </div>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-400">
-            I build practical software and AI solutions using
-            machine learning, computer vision, and modern web
-            technologies.
-          </p>
+            <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
+              AI Developer
+            </p>
 
-          <div className="mt-8 flex justify-center gap-4">
-            <a
-              href="#projects"
-              className="rounded-full bg-white px-6 py-3 font-medium text-black transition hover:bg-gray-200"
-            >
-              View Projects
-            </a>
+            <h1 className="mt-5 text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl">
+              Hi, I'm Angelo Joaquin Ramos.
+            </h1>
 
-            <a
-              href="https://github.com/Wackzy12"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-gray-700 px-6 py-3 font-medium transition hover:bg-gray-900"
-            >
-              GitHub
-            </a>
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400 sm:text-xl">
+              I build practical software and AI solutions using
+              machine learning, computer vision, data processing,
+              and modern development technologies.
+            </p>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#projects"
+                className="rounded-full bg-white px-7 py-3.5 text-center font-medium text-black transition hover:bg-gray-200"
+              >
+                View Projects
+              </a>
+
+              <a
+                href="/AngeloJoaquin_Ramos_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-gray-700 px-7 py-3.5 text-center font-medium transition hover:border-gray-500 hover:bg-gray-900"
+              >
+                Download CV
+              </a>
+            </div>
+
+            <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-500">
+              <span>Python</span>
+              <span>TensorFlow</span>
+              <span>OpenCV</span>
+              <span>FastAPI</span>
+              <span>TypeScript</span>
+            </div>
           </div>
         </div>
       </section>
-
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Certifications />
-      <Contact />
-      <Footer />
-    </main>
     
+    <About />
+    <Skills />
+    <Projects />
+    <Experience />
+    <Certifications />
+    <Contact />
+    <Footer />
+    </main>
   );
-  
 }

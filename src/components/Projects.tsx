@@ -3,19 +3,6 @@ import SectionHeading from "@/components/SectionHeading";
 export default function Projects() {
   const projects = [
     {
-      title: "Lazy Dashboard",
-      subtitle: "Productivity Dashboard",
-      description:
-        "A productivity dashboard for managing tasks and exploring productivity patterns through data-driven insights.",
-      technologies: [
-        "React",
-        "TypeScript",
-        "Supabase",
-        "JavaScript",
-      ],
-      github: "https://github.com/Wackzy12/Lazy-Dashboard",
-    },
-    {
       title: "Bullseye",
       subtitle: "Dart Detection & Scoring Application",
       description:
@@ -29,6 +16,21 @@ export default function Projects() {
         "Docker",
       ],
       github: "https://github.com/GGTsuyan/bullseye_app_2",
+      featured: true,
+    },
+    {
+      title: "Lazy Dashboard",
+      subtitle: "Productivity Dashboard",
+      description:
+        "A productivity dashboard for managing tasks and exploring productivity patterns through data-driven insights.",
+      technologies: [
+        "React",
+        "TypeScript",
+        "Supabase",
+        "JavaScript",
+      ],
+      github: "https://github.com/Wackzy12/Lazy-Dashboard",
+      featured: false,
     },
   ];
 
@@ -48,42 +50,66 @@ export default function Projects() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group rounded-3xl border border-gray-800 p-8 transition hover:border-gray-600 md:p-10"
+              className={`group overflow-hidden rounded-3xl border p-8 transition md:p-10 ${
+                project.featured
+                  ? "border-gray-700 bg-gray-950"
+                  : "border-gray-800"
+              } hover:border-gray-500`}
             >
-              <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-                <div className="max-w-3xl">
-                  <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
+              <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-start">
+                <div>
+                  {project.featured && (
+                    <span className="inline-flex rounded-full border border-gray-700 bg-black px-3 py-1 text-xs font-medium uppercase tracking-wider text-gray-400">
+                      Featured Project
+                    </span>
+                  )}
+
+                  <p className="mt-4 text-sm uppercase tracking-[0.25em] text-gray-500">
                     {project.title}
                   </p>
 
-                  <h3 className="mt-3 text-2xl font-semibold sm:text-3xl">
+                  <h3 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
                     {project.subtitle}
                   </h3>
 
-                  <p className="mt-5 text-base leading-7 text-gray-400">
+                  <p className="mt-6 max-w-3xl text-base leading-8 text-gray-400">
                     {project.description}
                   </p>
 
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.technologies.map((technology) => (
-                      <span
-                        key={technology}
-                        className="rounded-full bg-gray-900 px-3 py-1.5 text-sm text-gray-300"
-                      >
-                        {technology}
-                      </span>
-                    ))}
+                  <div className="mt-8">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                      Technologies
+                    </p>
+
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {project.technologies.map((technology) => (
+                        <span
+                          key={technology}
+                          className="rounded-full border border-gray-800 bg-black px-3 py-1.5 text-sm text-gray-300"
+                        >
+                          {technology}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 rounded-full border border-gray-700 px-5 py-2.5 text-sm font-medium transition hover:bg-white hover:text-black"
-                >
-                  View GitHub →
-                </a>
+                <div className="lg:pt-1">
+                  {project.github !== "#" ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex rounded-full border border-gray-700 px-5 py-2.5 text-sm font-medium transition hover:bg-white hover:text-black"
+                    >
+                      View GitHub →
+                    </a>
+                  ) : (
+                    <span className="inline-flex rounded-full border border-gray-800 px-5 py-2.5 text-sm text-gray-600">
+                      GitHub coming soon
+                    </span>
+                  )}
+                </div>
               </div>
             </article>
           ))}
